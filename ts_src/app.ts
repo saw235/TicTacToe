@@ -83,7 +83,7 @@ app.get('/api/sessionstate', wrapAsync(async(req: any, res :any) => {
     }
 }))
 
-app.post('/api/battles', wrapAsync (async (req:any, res:any) => {
+app.get('/api/battles', wrapAsync (async (req:any, res:any) => {
     var uuid : string  // unique user id
     if (req.query && req.query.uuid !== undefined) {
         uuid = req.query.uuid
@@ -97,7 +97,6 @@ app.post('/api/battles', wrapAsync (async (req:any, res:any) => {
 app.post('/api/placemarker', wrapAsync (async (req:any, res:any) => {
     var uuid : string 
     var sid : string
-    var key : string
     var pos : number
 
     if (req.query && req.query.sid) {
